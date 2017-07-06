@@ -1,0 +1,229 @@
+/*************************
+GENERAL
+*************************/
+
+body {
+    font-family: 'Open Sans', sans-serif; /* If Open Sans not present, it goes to sans serif */
+    
+}
+
+#wrapper {
+    /* Sets width limit, width can be smaller than value if desktop/mobile browser is smaller */
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%; /* Image can't get larger than the container it is in */
+}
+
+h3 {
+    margin: 0 0 1em 0;
+}
+
+
+
+/*************************
+HEADING
+*************************/
+
+header {
+    float: left;
+    margin: 0 0 30px 0; /* Top, right, bottom, left aka starts on top and goes clockwise*/
+    padding: 5px 0 0 0;
+    width: 100%;
+}
+
+#logo {
+    /* Text is centered */
+    text-align: center;
+    /* Np spacing around edges */
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Changa One', sans-serif; /* If Changa One not present, it goes to sans serif */
+    margin: 15px 0; /* 15px above and below and 0 for left and right */
+    /* em is a relative unit of measurement - 1 em is about 16px */
+    font-size: 1.75em;
+    font-weight: normal;
+    line-height: 0.8em; /* Space between each line of text */
+}
+
+h2 {
+    font-size: 0.75em;
+    margin: -5px 0 0; /* First value sets the top, second is left and right, and third is bottom */
+    font-weight: normal;
+}
+
+
+
+/*************************
+NAVIGATION
+*************************/
+
+nav {
+    text-align: center;
+    padding: 10px 0;
+    margin: 20px 0 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0 10px; /* 0 on top/bottom and 10px on left/right */
+    padding: 0;
+}
+
+nav li {
+    display: inline-block; /* Makes links in line with one another */
+}
+
+nav a {
+    font-weight: 800;
+    padding: 15px 10px;
+}
+
+
+
+/*************************
+FOOTER
+*************************/
+
+footer {
+    font-size: 0.75em;
+    text-align: center;
+    clear: both; /* Doens't line up with images, goes back to bottom of page */
+    padding-top: 50px;
+    color: #ccc
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px; /* 0 on top/bottom and 5px left/right */
+}
+
+
+
+/*************************
+PAGE PORTFOLIO
+*************************/
+
+#gallery {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Removes bullet points in lists */
+}
+
+#gallery li {
+    float: left; /* "Float" makes elements appear side by side, rather than stacking them on top of each other - images scale with browser until the two images side by side are 45% with 2.5% space on left/right sides of images equaling 100% max width */
+    width: 45%;
+    margin: 2.5%;
+    background-color: #f5f5f5;
+    color: #bdc3c7;
+}
+
+#gallery li a p {
+    margin: 0;
+    padding: 5%;
+    font-size: 0.75em;
+    color: #bdc3c7;
+}
+
+
+
+/*************************
+PAGE: ABOUT
+*************************/
+
+.profile-photo {
+    display: block;
+    max-width: 150px;
+    max-height: 150px;
+    margin: 0 auto 30px;
+    border-radius: 100%;
+}
+
+
+
+/*************************
+PAGE: CONTACT
+*************************/
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.contact-info a {
+    display: block; /* Each anchor element will take up space */
+    min-height: 20px; /* Minimum height that icons will be fully visible */
+    background-repeat: no-repeat; /* Background to show only once */
+    background-size: 20px 20px; /* Backgrounds resized  to look sharp in display*/
+    padding: 0 0 0 30px; /* Extra space on left side of text for icons */
+    margin: 0 0 10px;
+}
+
+/* Anchor element in List item in "contact-info" with class "phone" */
+.contact-info li.phone a {
+    background-image: url('../img/phone.png'); /* Double dots go to previous folder */
+}
+
+.contact-info li.mail a {
+    background-image: url('../img/mail.png');
+}
+
+.contact-info li.twitter a {
+    background-image: url('../img/twitter.png');
+}
+
+
+
+/*************************
+COLORS
+*************************/
+
+body {
+    background-color: #fff;
+    color: #999;
+}
+
+/* Green header */
+header {
+    background: #6ab47b;
+    border-color: #599a68;
+}
+
+/* Nav background on mobile devices */
+nav {
+    background: #599a68;
+}
+
+/* Styling both selectors - logo test*/
+h1, h2 {
+    color: #fff;
+}
+
+/* Links */
+a {
+    /* Hexadecimal value - Goes 0123456789abcdef for 16 values */
+    /* First two characters for Red, then Green, then Blue */
+    color: #6ab47b;
+}
+
+/* Nav link */
+nav a, nav a:visited {
+    color: #fff;
+}
+
+/* Any anchor inside the nav that has the class "selected" applied to it will get these style decorations - Selected nav link */
+nav a.selected, nav a:hover {
+    color: #32673f;
+}
