@@ -101,6 +101,12 @@ footer {
     color: #ccc
 }
 
+.social-icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px; /* 0 on top/bottom and 5px left/right */
+}
+
 
 
 /*************************
@@ -108,10 +114,8 @@ COLORS
 *************************/
 
 body {
-/*
     background-color: #fff;
     color: #999;
-*/
 }
 
 /* Green header */
@@ -124,6 +128,7 @@ header {
 
 /* Nav background on mobile devices */
 nav {
+    background: #999;
 /*    background: #599a68;*/
 }
 
@@ -141,7 +146,7 @@ a {
 
 /* Nav link */
 nav a, nav a:visited {
-/*    color: #fff;*/
+    color: darkcyan;
 }
 
 /* Any anchor inside the nav that has the class "selected" applied to it will get these style decorations - Selected nav link */
@@ -149,3 +154,54 @@ nav a.selected, nav a:hover {
 /*    color: #32673f;*/
     color: deepskyblue;
 }
+
+
+
+/*************************
+DROPDOWN MENU
+*************************/
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: darkturquoise;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: darkcyan;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
