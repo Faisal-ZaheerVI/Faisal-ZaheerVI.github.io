@@ -1,0 +1,62 @@
+/* MEDIA QUERIES */
+
+/* Styles will be added if digital screen and minimum width is 480px - Mobile layout */
+@media screen and (min-width: 480px) {
+    
+    /*************************
+    TWO COLUMN LAYOUT
+    *************************/
+    
+    #primary {
+        width: 40%;
+        float: left;
+        padding-left: 5%;
+    }
+    
+    #secondary {
+        width: 40%;
+        /* Floated right to avoid unexpected browser issues */
+        float: right;
+        padding-right: 5%;
+    }
+    
+}
+
+/* Styles will be added if digital screen and minimum width is 660px - Desktop/Tablet layout */
+@media screen and (min-width: 660px) {
+    
+    /*************************
+    HEADER
+    *************************/
+    
+    nav {
+        background: none; /*text sits against header background */
+        float: right;
+        font-size: 1.12em;
+        margin-right: 5%;
+        text-align: right;
+        width: 45%;
+    }
+    
+    #logo {
+        float: left;
+        margin-left: 5%;
+        text-align: left;
+        width: 45%;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    h2 {
+        font-size: 0.825em;
+        margin-bottom: 20px;
+    }
+    
+    header {
+/*        border-bottom: 5px solid #999;*/
+/*        margin-bottom: 60px;*/
+    }
+    
+}

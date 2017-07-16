@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Medical Internships | Resource Website</title>
+        
+        <link rel="stylesheet" href="normalize.css">
+        
+        <!-- main.css comes after normalize.css in the event that anything in normalize.css needs to be rewritten -->
+        
+        <link rel="stylesheet" href="main.css">
+        
+        <!-- Building on top of moile style to create Tablet and Desktop styles of website -->
+        <link rel="stylesheet" href="responsive.css">
+        
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        
+    </head>
+    <body>
+        <header>
+            <div id="navBarCont">
+                <div id ="forHead">
+                <!-- navigate to different programs, jobs, etc. "class = selected for page that user is on." -->
+                    <div id ="navBar"> 
+                        <a class="home" href ="index.html">
+                                <strong>blue</strong>berry
+                        </a>
+                        <ul class="mainNav">   
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="internships.html" class="selected">Internships</a></li>
+                            <li><a href="jobs.html">Jobs</a></li>
+                            <li><a href="volunteer.html">Volunteer</a></li>
+                            <li><a href="programs.html">Programs</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+        </header>
+        <section class="extraspace">
+            <!-- DROPDOWN MENU FOR CAREER FIELDS -->
+            <center>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Explore Career Field</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="int-technology.html">Technology</a>
+                        <a href="int-business.html">Business</a>
+                        <a href="int-medical.html">Medical</a>
+                    </div>
+                </div>
+            </center>
+<!--            FIRST COLUMN-->
+            <ul id="primary" class="intships">
+                <li>
+                    <h3>ARTHRITIS FOUNDATION SUMMER SCIENCE PROGRAM <em> @ UCSF in San Francisco and Stanford in Palo Alto, CA</em></h3>
+                    <p><b>Application Deadline:</b> Feb. 20, 2016</p>
+                    <p><b>Timeframe:</b> June 13 to Aug. 4, 2016.</p>
+                    <p><b>Paid:</b> $1500 Stipend</p>
+                    <h4>Description</h4>
+                    <p>Eight week paid internship to work in research or clinical laboratories at UCSF and Stanford, mentored by researchers in the fields of rheumatology &amp; immunology, with a focus on arthritis and related autoimmune diseases.</p>
+                    <h4>Requirements</h4>
+                    <p>Open to juniors and seniors. Must be 17 by June 1, 2016. Recommendations required.</p>
+                    <h4>Contact Info</h4><p>http://www.summerscienceinternship.kintera.org/</p>
+                </li>
+                <hr>
+                <li>
+                    <h3>ROSETTA INSTITUTE OF BIOMEDICAL RESEARCH <em> @ UC Berkeley &amp; UC San Diego</em></h3>
+                    <p><b>Timeframe:</b> June 5th to August 13th</p>
+                    <p><b>Cost:</b> $3280 (residential fee), $1980 (non-residential fee, limited.) Apply by 3/15/2016 for limited scholarships available for students from disadvantaged backgrounds.</p>
+                    <h4>Description</h4>
+                    <p>Two-week summer workshops in Molecular Biology of Cancer, Molecular Neuroscience, Molecular Immunology for students interested in a career in medicine and other related fields.</p>
+                    <h4>Requirements</h4>
+                    <p>Must be 14-18 years of age and have previously taken high school biology.</p>
+                    <h4>Contact Info</h4><p>http://www.rosettainstitute.org/#!biomedical-summer-camps/crty.</p>
+                </li>
+                <hr>
+            </ul>
+<!--            SECOND COLUMN-->
+            <ul id="secondary" class="intships">
+                <li>
+                    <h3>THE JACKSON LABORATORY STUDENT SUMMER PROGRAM <em> @ Bar Harbor, ME &amp; Farmington, CT</em></h3>
+                    <p><b>Application Deadline:</b> Online by February 2, 2016.</p>
+<!--                    <p><b>Timeframe:</b> _____</p>-->
+                    <p><b>Paid:</b> Yes</p>
+                    <h4>Description</h4>
+                    <p>A 10-week research internship in genetics and genomics open to current juniors &amp; seniors.Internships offered at The Jackson Laboratory (Bar Harbor, Maine), and Jackson Laboratory for Genomic Medicine (Farmington, CT). Conduct independent research as part of lab team. Interns receive stipend ($4750), full room &amp; board, &amp; round trip travel from home to the Laboratory. </p>
+<!--
+                    <h4>Requirements</h4>
+                    <p>~~~~~~~~~~</p>
+-->
+                    <h4>Contact Info</h4>
+                    <p>https://www.jax.org/education-and-learning/high-school-students-and-undergraduates/learn-earn-and-explore.</p>
+                </li>
+                <hr>
+                <li>
+                    <h3> UCSF/KAISER PERMANENTE UNDERGRADUATE RESEARCH INTERNSHIP <em> @ San Francisco, CA</em></h3>
+                    <p><b>Timeframe:</b> _____</p>
+                    <p><b>Paid:</b> (Unpaid or amount)</p>
+                    <h4>Description</h4>
+                    <p>To build a more supportive pathway for underrepresented University of California, Berkeley, undergraduate students interested in a career in medicine, we continue to develop our Undergraduate Research Internship program (URI). Annually, URI engages 16 interns in a meaningful research project, clinical shadowing at UCSF and Kaiser Oakland, didactics, leadership training, and extensive mentoring during the 8-week program, as well as through the medical school application process. The program directors also support the growing network of URI graduates who contribute back through peer-to-peer support, and by mentoring new URI interns.</p>
+                    <h4>Requirements</h4>
+                    <p>~~~~~~~~~~</p>
+                    <h4>Contact Info</h4>
+                    <p>~~~~~~~~~~</p>
+                </li>
+                <hr>
+            </ul>
+        </section>
+        <footer>
+            <a href="https://twitter.com/"><img src="imgs/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+            <a href="https://www.facebook.com/"><img src="imgs/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+            <p>&copy; 2017 blueberry</p>
+        </footer>
+        <script src="javascript.js"></script>
+    </body>
+</html>
