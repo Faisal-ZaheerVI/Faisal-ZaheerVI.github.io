@@ -1,0 +1,28 @@
+#topinfo {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: inherit;
+}
+
+#name {
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#sectitle {
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 150%;
+}
+
+#subtext {
+    font-size: 110%;
+}
+
+body {
+    margin-left: 100px;
+    margin-right: 100px;
+}
