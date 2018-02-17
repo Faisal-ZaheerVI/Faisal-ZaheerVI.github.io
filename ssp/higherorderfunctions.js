@@ -36,17 +36,21 @@ var each = function(collection, someFunction) {
   }
 };
 
-each(testArray, function(element, index) {
-  console.log('The index of => ' + element + ' is ', index);
-});
+// each(testArray, function(element, index) {
+//   console.log('The index of => ' + element + ' is ', index);
+// });
 
-// The function in each is an anonymous function
-each(testObj, function(value, key) {
-  console.log('The value at => ' + key + ' is => ' + value);
-})
+// Calling each with an anonymous function
+// each(testObj, function(value, key) {
+//   console.log('The value at => ' + key + ' is => ' + value);
+// })
 
 var sum = function(element) {
   console.log(element + 100);
 }
 
+// Calling each with a function expression
 each(testArray, sum);
+
+
+// Higher order functions is like storing money at a bank, the money is meant to be stored in the bank to be used at a later date
