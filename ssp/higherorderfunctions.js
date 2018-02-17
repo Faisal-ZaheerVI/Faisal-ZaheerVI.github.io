@@ -36,14 +36,14 @@ var each = function(collection, someFunction) {
   }
 };
 
-// each(testArray, function(element, index) {
-//   console.log('The index of => ' + element + ' is ', index);
-// });
+each(testArray, function(element, index) {
+  console.log('The index of => ' + element + ' is ', index);
+});
 
 // The function in each is an anonymous function
-// each(testObj, function(value, key) {
-//   console.log('The value at => ' + key + ' is => ' + value);
-// })
+each(testObj, function(value, key) {
+  console.log('The value at => ' + key + ' is => ' + value);
+})
 
 var sum = function(element) {
   console.log(element + 100);
