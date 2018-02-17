@@ -70,17 +70,46 @@ var map = function(collection, callback) {
   // Create a variable that is an array
   var results = [];
   
-  each(collection, function(element) {
+  // USING HOF (Higher Order Function)
+  each(collection, function(element, index) {
     // Push the mutated/modified elements to the results array
-    results.push(callback(element));
+    results.push(callback(element, index));
   });
+  
+  // USING A SIMPLE FOR LOOP
+  // for (var i = 0; i < collection.length; i++) {
+  //   results.push(callback(collection[i], i));
+  // }
+  
   // Return the results
   return results;
 };
 
-var test = map(testArray, function(element) {
-  return element * 5;
+var testObj = {name :'Yi'};
+
+var test = map(testArray, function(element, index) {
+  return element;
 });
 
-console.log(test);
+// console.log(test);
+
+// Create a filter function that will only return elements that pass a truthy test
+
+var isEven = function(element) {
+  return element % 2 === 0;
+};
+
+var filter = function(collection, predicate) {
+  var newArr = [];
+  for (i = 0; i < collection.length; i++) {
+    if (predicate(collection[i]) === true) {
+      newArr.push(collection[i]);
+    }
+  }
+  return newArr;
+};
+
+var testFiiter = filter(testArray, isEven);
+
+console.log(testFiiter); // => [2, 4, 6]
 
