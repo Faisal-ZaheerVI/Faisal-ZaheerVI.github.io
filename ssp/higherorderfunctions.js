@@ -17,7 +17,14 @@ testObj[meeting] = 'In the office';
 
 // console.log(testObj);
 
-// Intro to higher order functions
+
+
+
+
+// INTRO TO HIGHER ORDER FUNCTIONS
+
+// Higher order functions is like storing money at a bank, the money is meant to be stored in the bank to be used at a later date
+
 var testArray = [1,2,3,4,5,6,7];
 
 var each = function(collection, someFunction) {
@@ -45,12 +52,35 @@ var each = function(collection, someFunction) {
 //   console.log('The value at => ' + key + ' is => ' + value);
 // })
 
-var sum = function(element) {
-  console.log(element + 100);
-}
+// var sum = function(element) {
+//   console.log(element + 100);
+// }
 
 // Calling each with a function expression
-each(testArray, sum);
+// each(testArray, sum);
 
 
-// Higher order functions is like storing money at a bank, the money is meant to be stored in the bank to be used at a later date
+
+
+// USING each WITH A CALLBACK THAT RETURNS THE VALUES
+
+// Creating a higher order function which uses each
+
+var map = function(collection, callback) {
+  // Create a variable that is an array
+  var results = [];
+  
+  each(collection, function(element) {
+    // Push the mutated/modified elements to the results array
+    results.push(callback(element));
+  });
+  // Return the results
+  return results;
+};
+
+var test = map(testArray, function(element) {
+  return element * 5;
+});
+
+console.log(test);
+
