@@ -100,13 +100,28 @@ var isEven = function(element) {
 };
 
 var filter = function(collection, predicate) {
-  var newArr = [];
-  for (i = 0; i < collection.length; i++) {
-    if (predicate(collection[i]) === true) {
-      newArr.push(collection[i]);
+  // Create a results array
+  var trueValues = [];
+  
+  // Loop through the collection and push the elements that meet the predicate criteria (push only elements that are even numbers) to the results array
+  
+  // My loop solution
+  // for (i = 0; i < collection.length; i++) {
+  //   if (predicate(collection[i]) === true) {
+  //     trueValues.push(collection[i]);
+  //   }
+  // }
+  
+  // ALternative loop solution
+  each(collection, function(element) {
+    // Don't have to use === true after (element)
+    if(predicate(element)) {
+      trueValues.push(element);
     }
-  }
-  return newArr;
+  });
+  
+  // Return the results array
+  return trueValues;
 };
 
 var testFiiter = filter(testArray, isEven);
