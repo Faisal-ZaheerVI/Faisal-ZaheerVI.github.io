@@ -103,7 +103,7 @@ var filter = function(collection, predicate) {
   // Create a results array
   var trueValues = [];
   
-  // Loop through the collection and push the elements that meet the predicate criteria (push only elements that are even numbers) to the results array
+  // Loops through the collection and push the elements that meet the predicate criteria (push only elements that are even numbers if the predicate parameter is the isEven function) to the results array
   
   // My loop solution
   // for (i = 0; i < collection.length; i++) {
@@ -124,7 +124,37 @@ var filter = function(collection, predicate) {
   return trueValues;
 };
 
-var testFiiter = filter(testArray, isEven);
+var reject = function(collection, predicate) {
+  //
+  var falseValues = [];
+  
+  // Loops through the collection and push the elements that do NOT meet the predicate criteria (push only elements that are even numbers if the predicate parameter is the isEven function) to the results array
+  
+  each(collection, function(element) {
+    if (!predicate(element)) {
+      falseValues.push(element);
+    }
+  });
+  
+  // Return the results array
+  return falseValues;
+};
 
-console.log(testFiiter); // => [2, 4, 6]
+var refactoredReject = function(collection, predicate) {
+  // Use filter here
+  return filter(collection, function(element) {
+    return !predicate(element);
+  });
+};
+
+// var testFiiter1 = filter(testArray, isEven);
+
+// var testFilter2 = refactoredReject(testArray, isEven);
+
+// Testing the refactoredReject with an anonymous function
+var testFilter3 = refactoredReject(testArray, function(element) {
+  return element < 3;
+});
+
+console.log(testFilter3); // => [2, 4, 6]
 
