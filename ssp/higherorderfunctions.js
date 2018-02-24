@@ -289,10 +289,15 @@ var is97 = function(num) {
   return num === 97;
 };
 
-var greaterThanSixAndEvenOr97 = filter(flatten(testArray3), function(element) {
+var testProblem3 = filter(flatten(testArray3), function(element) {
   // Anonymous functions invokes the 3 created functions to filter out values that are even and greater than 6 or are the value
   return greaterThan6(element) && evens(element) || is97(element);
 });
 
-console.log(greaterThanSixAndEvenOr97);
+var testProblem3Squared = map(filter(flatten(testArray3), function(element) {
+  // Anonymous functions invokes the 3 created functions to filter out values that are even and greater than 6 or are the value
+  return greaterThan6(element) && evens(element) || is97(element);
+}), multiplyBy);
 
+// console.log(testProblem3);
+// console.log(testProblem3Squared);
