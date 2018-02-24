@@ -326,6 +326,12 @@ var each = function(collection, iterator) {
 };
 
 var reduce = function(collection, iterator, accumulator) {
-  
+  each(collection, function(element) {
+    console.log('Accumulator is now =>', accumulator);
+    accumulator = iterator(element, accumulator);
+  });
   return accumulator;
 };
+
+var test = reduce(testArray, sum, 0); // Should equal 20
+console.log(test);
