@@ -17,11 +17,9 @@ testObj[meeting] = 'In the office';
 
 // console.log(testObj);
 
-
-
-
-
-// INTRO TO HIGHER ORDER FUNCTIONS
+/******************************
+INTRO TO HIGHER ORDER FUNCTIONS
+******************************/
 
 // Higher order functions is like storing money at a bank, the money is meant to be stored in the bank to be used at a later date
 
@@ -58,9 +56,6 @@ var each = function(collection, someFunction) {
 
 // Calling each with a function expression
 // each(testArray, sum);
-
-
-
 
 // USING each WITH A CALLBACK THAT RETURNS THE VALUES
 
@@ -157,4 +152,110 @@ var testFilter3 = refactoredReject(testArray, function(element) {
 });
 
 console.log(testFilter3); // => [2, 4, 6]
+
+/******************************
+HIGHER ORDER FUNCTIONS - PART 3
+******************************/
+
+var testObj = { missionBit : 'Students'};
+
+var each = function(collection, iterator) {
+  if (Array.isArray(collection)) {
+    for (var i = 0; i < collection.length; i++) {
+      iterator(collection[i], i);
+    }
+  }
+  else {
+    for (var key in collection) {
+      iterator(collection[key], key);
+    }
+  }
+};
+
+// each(testObj, function(element) {
+//   // Here you may do anything to the element
+//   console.log(element);
+// });
+
+var testArray = [1,2,3,4,5,6,7];
+var testArray2 = [[3, 5, 90], [2, 4, 5, 6], 56, 5, 95];
+
+// Map function changes the element
+// using the callback function
+var map = function(collection, callback) {
+  var results = [];
+  
+  each(collection, function(element) {
+    results.push(callback(element));
+  });
+  
+  return results;
+};
+
+// Filter function does NOT change the element
+// It checks values in the collection to see if it 
+// meets the predicate then pushes those values
+var filter = function(collection, predicate) {
+  var filtered = [];
+  
+  each(collection, function(element) {
+    if(predicate(element)) {
+      filtered.push(element);
+    }
+  });
+  
+  return filtered;
+};
+
+var multiplyBy = function(element) {
+  return element * element;
+};
+
+var test = map(testArray, multiplyBy);
+// console.log(test);
+// console.log('This is the original array =>', testArray);
+
+var evens = function(element) {
+  return element % 2 === 0;
+};
+
+var testFilter = filter(testArray, evens);
+//console.log(testFilter);
+
+// console.log(testFilter);
+
+// SOLVE: Filter 5's from testArray2 using filter function
+
+// Predicate function for filtering 5's out from array
+var isFive = function(element) {
+  return element === 5;
+};
+
+// Function to get all values in nested arrays in testArray2
+// to be in one single array of testArray2
+var unNest = function(arr) {
+  var newArr = [];
+  
+  for (var i in arr) {
+    if (Array.isArray(arr[i])) {
+      for (var j in arr[i]) {
+        newArr.push(arr[i][j]);
+      }
+    }
+    else {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+};
+
+// Filters 5's from testArray2, which is un-nested
+var fivesOnly = filter(unNest(testArray2), isFive);
+
+// Original unchanged testArray2
+console.log(testArray2);
+// Un-nested testArray2
+console.log(unNest(testArray2));
+// Filtered 5's from un-nested testArray2
+console.log(fivesOnly);
 
