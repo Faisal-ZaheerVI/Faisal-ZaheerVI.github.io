@@ -224,7 +224,9 @@ var testFilter = filter(testArray, evens);
 
 // console.log(testFilter);
 
-// SOLVE: Filter 5's from testArray2 using filter function
+/*********************************************************
+  SOLVE: Filter 5's from testArray2 using filter function
+*********************************************************/
 
 // Predicate function for filtering 5's out from array
 var isFive = function(element) {
@@ -249,13 +251,48 @@ var unNest = function(arr) {
   return newArr;
 };
 
-// Filters 5's from testArray2, which is un-nested
-var fivesOnly = filter(unNest(testArray2), isFive);
+// ALTERNATIVE TO USING MY unNest FUNCTION
+var flatten = function(arr) {
+  var container = [];
+  each(arr, function(element) {
+    container = container.concat(element);
+  })
+  return container;
+}
+
+// Filters only 5's from testArray2, which is un-nested
+var onlyFives = filter(unNest(testArray2), isFive);
+var onlyFives2 = filter(flatten(testArray2), isFive);
 
 // Original unchanged testArray2
 console.log(testArray2);
 // Un-nested testArray2
 console.log(unNest(testArray2));
 // Filtered 5's from un-nested testArray2
-console.log(fivesOnly);
+console.log(onlyFives);
+// Filtered fives from flattened testArray2
+console.log(onlyFives2);
+
+/*******************************************
+  PROBLEM: Filter testArray3 value that are 
+  Even AND greater than 6 
+  OR the value 97
+*******************************************/
+
+var testArray3 = [[8, 5, 90, 97], [97, 4, 5 ,6], 97, 5, 95,[97]];
+
+var greaterThan6 = function(num) {
+  return num > 6;
+};
+
+var is97 = function(num) {
+  return num === 97;
+};
+
+var greaterThanSixAndEvenOr97 = filter(flatten(testArray3), function(element) {
+  // Anonymous functions invokes the 3 created functions to filter out values that are even and greater than 6 or are the value
+  return greaterThan6(element) && evens(element) || is97(element);
+});
+
+console.log(greaterThanSixAndEvenOr97);
 
