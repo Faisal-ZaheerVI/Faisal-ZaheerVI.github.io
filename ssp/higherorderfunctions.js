@@ -332,6 +332,5 @@ var reduce = function(collection, iterator, accumulator) {
   });
   return accumulator;
 };
-
-var test = reduce(testArray, sum, 0); // Should equal 20
+var test = reduce(testArray, function(){}, 0); // Should equal 20
 console.log(test);
