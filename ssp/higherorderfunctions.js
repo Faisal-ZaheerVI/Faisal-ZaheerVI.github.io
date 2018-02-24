@@ -301,3 +301,31 @@ var testProblem3Squared = map(filter(flatten(testArray3), function(element) {
 
 // console.log(testProblem3);
 // console.log(testProblem3Squared);
+
+/********************************************
+* CREATING REDUCE - HIGHER ORDER FUNCTIONS  *
+********************************************/
+
+var testArray = [2,3,4,5,6];
+
+var sum = function(num) {
+  return num + num;
+};
+
+var each = function(collection, iterator) {
+  if (Array.isArray(collection)) {
+    for (var i = 0; i < collection.length; i++) {
+      iterator(collection[i], i);
+    }
+  }
+  else {
+    for (var key in collection) {
+      iterator(collection[key], key);
+    }
+  }
+};
+
+var reduce = function(collection, iterator, accumulator) {
+  
+  return accumulator;
+};
