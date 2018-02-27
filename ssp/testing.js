@@ -1,5 +1,5 @@
 /***********************
-*  INTRO TO TESTTING   *
+*  INTRO TO TESTING   *
 ***********************/
 
 function assertEqual(actual, expected, testName) {
