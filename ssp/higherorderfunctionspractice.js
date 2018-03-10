@@ -75,3 +75,42 @@ const filter = (collection, predicate) => {
 
 let test2 = filter(testArray, (element) => element === 3 || element === 4);
 console.log(test2);
+
+let stringArray = ['Zebra', 'Yao', 'Let', 'zumba'];
+
+let test3 = filter(stringArray, (i) => i[0].toLowerCase() === 'z');
+
+console.log(test3);
+
+// REJECT function
+// Input = Collection and a callback resolves to a Boolean
+// Output = Array filled with elements that do not pass the callback
+// Constraints = none
+// Edgecases = none
+const reject = (collection, predicate) => {
+  var rejectedResults = [];
+  
+  each(collection, (element) => {
+    !predicate(element) ? rejectedResults.push(element) : null;
+  });
+  
+  return rejectedResults;
+};
+
+let test4 = reject(stringArray, (i) => i[0].toLowerCase() === 'z').join(' and ');
+console.log(test4);
+
+const rejectUsingFilter = (collection, predicate) => {
+  return filter(collection, (element) => !predicate(element));
+};
+
+const filterUsingReject = (collection, predicate) => {
+  return reject(collection, (element) => !predicate(element));
+};
+
+let test5 = rejectUsingFilter(stringArray, (element) => element[0].toLowerCase() === 'z').join(' and ');
+let test6 = filterUsingReject(stringArray, (element) => element[0].toLowerCase() === 'z').join(' and ');
+
+console.log('Words with Z are: ' + test5);
+console.log('Words without Z are: ' + test6);
+
