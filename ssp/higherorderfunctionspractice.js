@@ -114,3 +114,38 @@ let test6 = filterUsingReject(stringArray, (element) => element[0].toLowerCase()
 console.log('Words with Z are: ' + test5);
 console.log('Words without Z are: ' + test6);
 
+// REDUCE function
+// Input = Collection, callback (iterator), and an accumulator
+// Output = accumulator
+// Constraints = none
+// Edgecases = Account for when the accumulator is not passed in during call time; If the accumulator is not provided
+
+const reduce = (collection, iterator, accumulator) => {
+  each(collection, (element) => {
+    !accumulator ? accumulator = element : accumulator = iterator(accumulator, element);
+  });
+  
+  return accumulator;
+};
+
+let test7 = reduce(testArray, (e, next) => e + next);
+console.log(test7);
+
+let test8 = reduce(stringArray, (firstElement, nextElement) => {
+  // METHOD 1
+  firstElement['oneString'] = stringArray.join(' ');
+  return firstElement;
+}, {});
+
+// METHOD 2 
+let sumObj = (obj, str) => {
+  !obj.str ? obj.str = str : obj.str = obj.str + ' ' + str;
+  return obj;
+}
+let test8_2 = reduce(stringArray, sumObj, {});
+
+// Output should be 
+// { 'oneString' : 'Zebra Yao Let zumba' }
+console.log(test8);
+console.log(test8_2);
+
