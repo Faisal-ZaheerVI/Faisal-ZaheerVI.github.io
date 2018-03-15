@@ -112,6 +112,6 @@ var sumUsingWhile = function(list) {
     Array.isArray(something) ? total += sumUsingWhile(something) : total += something;
   }
   return total;
-}
+};
 
 console.log(sumUsingWhile(matrix));
